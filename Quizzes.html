@@ -1,0 +1,415 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+<title>Question Quest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/fe30898daf.js" crossorigin="anonymous"></script>
+<link rel="icon" type="image/x-icon" href="C:/Users/pavit/Downloads/Question_mark-removebg-preview (1).png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+body{
+    font-family: 'Comfortaa', cursive;
+	color: white;
+	text-align: center;
+	background-color: #262626;
+}
+
+.header{
+    font-size: 15px;
+	text-align: center;
+	background-color: white;
+}
+
+i{
+    
+	position: absolute;
+    top: 5%;
+    right: 10%;
+}
+	
+button{
+
+font-family: 'Comfortaa', cursive;
+
+}	
+	
+    	
+#questionsCorrectAmount{
+    color: white;
+    position: fixed;
+    top: 3;
+    right: 7;
+	text-align: center;
+	margin-left: 300px;
+}
+
+
+span{
+    display: inline-block
+	
+	
+}	
+
+
+#answerMsg{
+    font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+}
+
+
+#answerMsg1{
+    font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+}
+
+.btn{
+    font-family: 'Asap', sans-serif;
+    border-radius: 10px;
+	text-align: center;
+    border-style: none;
+	
+}
+
+progress{
+    width: 400px;
+	height: 20px;
+}
+
+
+#b{
+background-color: #00cc00;
+font-family: 'Comfortaa', cursive;
+color:white:
+}
+
+#a{
+background-color: red;
+font-family: 'Comfortaa', cursive;
+color:white:
+}
+
+#c{
+background-color: yellow;
+font-family: 'Comfortaa', cursive;
+color:white:
+}
+
+
+#b2{
+background-color: #00cc00;
+font-family: 'Comfortaa', cursive;
+color:white:
+}
+
+#a2{
+background-color: red;
+font-family: 'Comfortaa', cursive;
+color:white:
+}
+
+#c2{
+background-color: yellow;
+font-family: 'Comfortaa', cursive;
+color:white:
+}
+
+#clickto1{
+
+background-color:royalblue;
+height: 50px;
+border-radius: 10px;
+width: 200px;
+border: none;
+}
+
+#clickto2{
+
+background-color:royalblue;
+height: 50px;
+border-radius: 10px;
+width: 200px;
+border: none;
+
+}
+
+</style>
+<style>
+.tablinks {
+  background-color:royalblue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 10px;
+  
+}
+
+.tablinks .tablinks:hover {
+background-color: powderblue;
+color: grey;
+}
+
+</style>
+</head>
+<body onload="tutorial();checkCookie();">
+<header>
+<span><h2>Question Quest</h2></span>
+<br>
+<br>
+<br>
+<br>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Daily Question</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Q points</button>
+</div>
+<br>
+<br>
+<hr>
+<br>
+
+
+<div id="London" class="tabcontent">
+ <h4>Daily Question</h4>
+ <br>
+ <br>
+<p classs="header">Today's quiz is for .... Albert Einstien</p>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<button id="clickto1">Click for question 1</button>
+<div id="quiz" hidden>
+<p>Where did Albert Einstien live in his older years?</p>
+<br>
+<div>
+<button onclick="answerReal1()" id="a" class="btn"><p>A &nbsp;&nbsp; Princeton,&nbsp;New Jersey</p></button>
+<button onclick="answerReal2()" id="b" class="btn"><p>B &nbsp;&nbsp; Columbus,&nbsp;Ohio</p></button>
+<button onclick="answerReal2()" id="c" class="btn"><p>C &nbsp;&nbsp; Salt Lake City,&nbsp;Utah</p></button>
+<br>
+<p id="answerMsg"></p>
+</div>
+<br> 
+<br>
+<br>
+
+
+</div>
+<br>
+<br>
+<br>
+<button id="clickto2" id="alert">Click for question 2</button>
+<div id="quiz2" hidden>
+<p>Where did Albert Einstien live in his older years?</p>
+<br>
+<div>
+<button onclick="answerReal11()" id="a2" class="btn"><p>A &nbsp;&nbsp; Princeton,&nbsp;New Jersey</p></button>
+<button onclick="answerReal2()" id="b2" class="btn"><p>B &nbsp;&nbsp; Columbus,&nbsp;Ohio</p></button>
+<button onclick="answerReal2()" id="c2" class="btn"><p>C &nbsp;&nbsp; Salt Lake City,&nbsp;Utah</p></button>
+
+<br>
+<p id="answerMsg1"></p>
+</div>
+<br> 
+<br>
+<br>
+
+
+</div>
+
+
+
+
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h4>Q Points</h4>
+  <br>
+  <br>
+  <br>
+  <p id="questionCorrectAmount"></p>
+<br>
+<br>
+
+<br>
+<progress class="progress" value="0" max="100"></progress>
+</div>
+
+
+
+
+
+</header>
+
+
+
+<script>
+
+var questionsCorrect = 0
+var progressBar = 0
+
+
+
+
+
+
+$(document).ready(function(){
+  $("#clickto1").click(function(){
+    $("#quiz").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+  $("#clickto2").click(function(){
+    $("#quiz2").slideToggle("slow");
+  });
+});
+
+
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  //document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  document.cookie="hi=hidi";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+
+
+function answerReal1() {
+ answerMsg.innerHTML = "Yay, you got the question correct. Go on to the next one.";
+ document.getElementById("a").disabled = true; 
+ document.getElementById("b").disabled = true;
+ document.getElementById("c").disabled = true; 
+ 
+ 
+ 
+ 
+ questionsCorrect = questionsCorrect+1;
+ 
+ progressBar = questionsCorrect;
+ 
+ questionCorrectAmount.innerHTML = questionsCorrect + "      Q point(s)";
+ 
+ $('.progress').val(questionsCorrect);
+ 
+ if ((progressBar == 100 || progressBar > 100)) {
+  window.alert("Congrats, you got 25 Q points for filling up the Q bar");
+  
+  questionsCorrect = questionsCorrect+25;
+  
+  questionCorrectAmount.innerHTML = questionsCorrect + "      Q point(s)";
+  
+  
+}
+ }
+
+
+ function answerReal11() {
+ answerMsg1.innerHTML = "Great job. You got a perfect score.";
+ document.getElementById("a2").disabled = true; 
+ document.getElementById("b2").disabled = true;
+ document.getElementById("c2").disabled = true; 
+ 
+ 
+ 
+ questionsCorrect = questionsCorrect+1;
+ 
+ progressBar = questionsCorrect;
+ 
+ questionCorrectAmount.innerHTML = questionsCorrect + "      Q point(s)";
+ 
+ $('.progress').val(questionsCorrect);
+ 
+ if ((progressBar == 10 || progressBar > 10)) {
+  window.alert("Congrats, you got 25 Q points for filling up the Q bar");
+  
+  questionsCorrect = questionsCorrect+25;
+  
+  questionCorrectAmount.innerHTML = questionsCorrect + "      Q point(s)";
+  
+  
+}
+ }
+ 
+function hideauto() {
+  document.getElementById("quiz").setAttribute("hidden")
+  document.getElementById("quiz2").setAttribute("hidden")
+}
+ 
+ 
+function answerReal2() {
+answerMsg.innerHTML = "Oops, you got the question wrong. Better luck tomorow.";
+ document.getElementById("a").disabled = true; 
+ document.getElementById("b").disabled = true;
+ document.getElementById("c").disabled = true; 
+}
+
+
+function tutorial() {
+window.alert("Hey there, welcome to Question Quest. When you solve a question correctly, you get 1 Q point. A new question comes every day at 7:oo AM ET");
+questionCorrectAmount.innerHTML = questionsCorrect  + "    Q point(s)";
+
+
+
+}
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+
+
+</script>
+</body>
+</html>
